@@ -5,7 +5,8 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const router = express.Router();
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+const cookieparser = require("cookie-parser");
+app.use(cookieparser());
 
 const {
     HOST,
