@@ -54,11 +54,12 @@ app.use(
     name: COOKIE_NAME, //name to be put in "key" field in postman etc
     secret: SESS_SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: mongoDBstore,
     cookie: {
       maxAge: MAX_AGE,
-      sameSite:'none'
+      sameSite:'none',
+      secure:true
     }
   })
 );
