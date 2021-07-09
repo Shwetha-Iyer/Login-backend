@@ -58,8 +58,7 @@ app.use(
     store: mongoDBstore,
     cookie: {
       maxAge: MAX_AGE,
-      secure:true,
-      sameSite:'strict'
+      sameSite:'none'
     }
   })
 );
