@@ -17,7 +17,7 @@ const {
     COOKIE_NAME
   } = require("./config/config");
 const { MongoURI } = require("./config/database");
-const MAX_AGE = 1000 * 60 * 60 * 3; // Three hours
+const MAX_AGE = 1000 * 60 * 5 ; // one hour should be 5 mins
 
 app.set('trust proxy',1);
 // var corsOptions = {

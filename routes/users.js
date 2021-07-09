@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/User"); // User model
+const {COOKIE_NAME} = require("../config/config")
 
 router.post("/register", (req, res) => {
     const { name, email, password } = req.body;
@@ -72,7 +73,7 @@ router.post("/login", (req, res) => {
     req.session.destroy((err) => {
       //delete session data from store, using sessionID in cookie
       if (err) throw err;
-      res.clearCookie("session-id"); // clears cookie containing expired sessionID
+      res.clearCookie(COOKIE_NAME); // clears cookie containing expired sessionID
       res.send("Logged out successfully");
     });
   });
@@ -80,7 +81,7 @@ router.post("/login", (req, res) => {
   router.get("/authchecker", (req, res) => {
     const sessUser = req.session.user;
     console.log("inside auth checker");
-    console.log(req);
+    //console.log(req);
     if (sessUser) {
       return res.json({ msg: " Authenticated Successfully", sessUser });
     } else {
