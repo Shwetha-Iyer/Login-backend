@@ -57,7 +57,9 @@ app.use(
     saveUninitialized: true,
     store: mongoDBstore,
     cookie: {
-      maxAge: MAX_AGE
+      maxAge: MAX_AGE,
+      secure:true,
+      sameSite:'none'
     }
   })
 );
