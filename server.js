@@ -56,11 +56,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: mongoDBstore,
-    cookie: {
-      maxAge: MAX_AGE,
-      sameSite:'none',
-      secure:true
-    }
+    
   })
 );
 
