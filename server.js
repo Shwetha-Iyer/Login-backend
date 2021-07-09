@@ -24,7 +24,7 @@ const MAX_AGE = 1000 * 60 * 60 * 3; // Three hours
 // }
 // app.use(cors(corsOptions));
 app.use(cors({
-  
+  origin: 'https://heuristic-neumann-881a80.netlify.app',
   credentials: true
 }));
 
