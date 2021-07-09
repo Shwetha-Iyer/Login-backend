@@ -19,12 +19,14 @@ const {
 const { MongoURI } = require("./config/database");
 const MAX_AGE = 1000 * 60 * 60 * 3; // Three hours
 
+app.set('trust proxy',1);
 // var corsOptions = {
 //   credentials:true
 // }
 // app.use(cors(corsOptions));
 app.use(cors({
   origin: 'https://heuristic-neumann-881a80.netlify.app',
+  methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD','DELETE'],
   credentials: true
 }));
 
@@ -52,13 +54,14 @@ app.use(
   session({
     name: COOKIE_NAME, //name to be put in "key" field in postman etc
     secret: SESS_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: false,
     store: mongoDBstore,
     cookie: {
       maxAge: MAX_AGE,
-      sameSite:'none',
+      sameSite:"none",
       secure:true,
+      httpOnly:true
     }
   })
 );
