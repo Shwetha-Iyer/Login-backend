@@ -27,7 +27,8 @@ app.set('trust proxy',1);
 app.use(cors({
   origin: 'https://heuristic-neumann-881a80.netlify.app',
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD','DELETE'],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', *]
 }));
 
 // Connecting to Database
@@ -61,7 +62,8 @@ app.use(
       maxAge: MAX_AGE,
       secure:true,
       sameSite:"None",
-      httpOnly:true
+      httpOnly:true,
+      domain:'https://heuristic-neumann-881a80.netlify.app'
     }
   })
 );
