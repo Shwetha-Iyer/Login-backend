@@ -63,7 +63,7 @@ app.use(
       secure:true,
       sameSite:"None",
       httpOnly:true,
-      domain:'https://heuristic-neumann-881a80.netlify.app'
+      domain:'heuristic-neumann-881a80.netlify.app'
     }
   })
 );
