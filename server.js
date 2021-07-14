@@ -28,7 +28,7 @@ app.use(cors({
   origin: 'https://heuristic-neumann-881a80.netlify.app',
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD','DELETE'],
   credentials: true,
-  allowedHeaders: ['Content-Type', *]
+  allowedHeaders: 'Content-Type, *'
 }));
 
 // Connecting to Database
