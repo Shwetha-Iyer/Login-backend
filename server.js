@@ -61,7 +61,8 @@ app.use(
       maxAge: MAX_AGE,
       secure:true,
       sameSite:"None",
-      httpOnly:true
+      httpOnly:true,
+      domain: 'https://heuristic-neumann-881a80.netlify.app'
     }
   })
 );
